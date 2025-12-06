@@ -1,0 +1,74 @@
+
+/* Terms & Conditions Page Styles */
+.terms-page {
+  font-family: Arial, sans-serif;
+  background-color: #f1f8f9;
+  color: #2e3a45;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #794a9d;
+  padding: 10px;
+}
+.navbar ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+.navbar li {
+  margin: 0 15px;
+}
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+.navbar a:hover,
+.navbar .active {
+  text-decoration: underline;
+}
+
+/* Main content */
+.terms-container {
+  max-width: 900px;
+  background: #ffffff;
+  padding: 40px;
+  margin: 40px auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.terms-container h2 {
+  color: #0d2c44;
+  margin-bottom: 20px;
+  font-size: 32px;
+}
+.terms-container h3 {
+  color: #794a9d;
+  margin-top: 30px;
+}
+.terms-container p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #794a9d;
+  color: white;
+  margin-top: auto;
+}
+.footer a {
+  color: white;
+  text-decoration: none;
+}
+.footer a:hover {
+  text-decoration: underline;
+}

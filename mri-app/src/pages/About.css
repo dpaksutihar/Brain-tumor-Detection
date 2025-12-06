@@ -1,0 +1,82 @@
+/* Force page to stretch full height */
+.about {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* Navbar styling */
+.about .navbar {
+  background-color: #794a9d;
+  padding: 15px;
+  text-align: center;
+}
+
+.about .navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.about .navbar li {
+  display: inline;
+  margin: 0 15px;
+}
+
+.about .navbar a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.about .navbar a:hover {
+  text-decoration: underline;
+}
+
+/* MAIN CONTENT AREA — This makes the footer stay at bottom */
+.about-container {
+  flex: 1;                 /* Push footer down & expand content */
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 40px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.about-container h2 {
+  color: #794a9d;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.about-container p {
+  color: #333;
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.about-container p:last-child {
+  margin-bottom: 0;
+}
+
+/* FOOTER — Stays at bottom always */
+.footer {
+  background-color: #794a9d;
+  color: #ffffff;
+  text-align: center;
+  padding: 20px;
+  margin-top: auto;        /* Pushes footer to bottom */
+}
+
+.footer a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}

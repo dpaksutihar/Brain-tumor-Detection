@@ -1,0 +1,140 @@
+/* --- FEATURES SECTION (Kept the vertical layout from the previous step) --- */
+
+.feature-card {
+  display: block;
+  width: 90%;
+  max-width: 450px;
+  margin: 20px auto;
+  
+  /* Original Colors/Styles */
+  background-color: #f4f4f4; /* Light gray from your original card color */
+  padding: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Softer shadow */
+  border-radius: 12px; 
+  font-size: 1.1rem;
+  text-align: center; /* Centering card text is common for feature lists */
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  background-color: #ffffff; /* Brighter background on hover */
+}
+
+/* --------------------------------- */
+/* --- HERO SECTION WITH IMAGE BACKGROUND --- */
+/* --------------------------------- */
+
+.hero {
+  /* This is the key change to implement a background image */
+  background-image: 
+    /* 1. Dark Overlay (MUST be listed first) */
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+    /* 2. Placeholder for your image (Replace 'path/to/your/image.jpg' with your actual path) */
+    url('Gemini_Generated_Image_rtpxshrtpxshrtpx.png'); 
+  
+  /* Background properties for a high-quality cover */
+  background-size: cover; /* Ensures the image covers the entire area */
+  background-position: center; /* Centers the image */
+  background-attachment: fixed; /* (Optional) Creates a nice parallax scrolling effect */
+  
+  color: #ffffff;
+  text-align: center;
+  padding: 120px 20px; /* Increased vertical padding for impact */
+  
+  /* Added a subtle internal shadow for depth (optional) */
+  box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.5); 
+}
+
+.hero h1 {
+  font-size: 3.8rem; /* Larger, bolder heading */
+  margin-bottom: 20px;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8); /* Shadow to make text pop over image */
+}
+
+.hero p {
+  font-size: 1.4rem;
+  max-width: 700px;
+  margin: 0 auto 50px auto;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+.buttons button {
+  /* Using your original #794a9d as the primary button color */
+  background-color: #794a9d; 
+  color: #ffffff;
+  padding: 15px 35px;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin: 0 10px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.buttons button:hover {
+  /* Lightening the button color on hover */
+  background-color: #3d9e77; 
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* --------------------------------- */
+/* --- OTHER SECTIONS (Using your original colors) --- */
+/* --------------------------------- */
+
+/* NAVBAR (Using your original #794a9d) */
+.navbar {
+  background-color: #794a9d; 
+  padding: 15px 40px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar ul li {
+  margin: 0 25px;
+}
+
+.navbar ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: opacity 0.3s ease;
+}
+
+.navbar ul li a:hover {
+  opacity: 0.8;
+  text-decoration: none;
+}
+.features h2 {
+  /* Ensure text is centered (this should already be working if .features is centered) */
+  text-align: center; 
+  
+  /* Make the text bold */
+  font-weight: bold; 
+  
+  /* Retained/Adjusted Styles for appearance */
+  font-size: 2.5rem;
+  margin-bottom: 30px; /* Provides space below the heading */
+  color: #794a9d; /* Keeping your color */
+}
+
+/* FOOTER (Using your original #794a9d) */
+.footer {
+  background-color: #794a9d;
+  color: #ffffff;
+  text-align: center;
+  padding: 30px;
+  margin-top: auto;
+  font-size: 0.9rem;
+}

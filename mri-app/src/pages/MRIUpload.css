@@ -1,0 +1,159 @@
+/* MRI Upload Page Styles */
+.mri-upload {
+  font-family: 'Arial', sans-serif;
+  background-color: #f1f8f9;
+  color: #2e3a45;
+
+  /* IMPORTANT FIX FOR FOOTER */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  background-color: #794a9d;
+  padding: 10px;
+}
+
+.navbar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar ul li {
+  margin: 0 15px;
+}
+
+.navbar ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.navbar ul li a:hover {
+  text-decoration: underline;
+}
+
+.upload-section {
+  text-align: center;
+  padding: 30px 20px;
+  background-color: #ffffff;
+  margin-top: 50px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+  /* EXPANDS CONTENT TO PUSH FOOTER DOWN */
+  flex: 1;
+}
+
+.upload-section h1 {
+  font-size: 36px;
+  color: #0d2c44;
+}
+
+.upload-section p {
+  font-size: 18px;
+  color: #5e6e76;
+  margin-bottom: 30px;
+}
+
+.upload-box {
+  margin-bottom: 20px;
+}
+
+.upload-input {
+  display: none;
+}
+
+.upload-label {
+  background-color: #42a5f5;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.upload-label:hover {
+  background-color: #1e88e5;
+}
+
+.image-preview {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.image-container {
+  margin-top: 10px;
+}
+
+.preview-image {
+  max-width: 100%;
+  max-height: 400px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.buttons {
+  margin-top: 30px;
+}
+
+.back-btn, .start-btn {
+  background-color: #42a5f5;
+  color: white;
+  padding: 15px 30px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.back-btn:hover, .start-btn:hover {
+  background-color: #1e88e5;
+}
+
+.progress-container {
+  margin-top: 30px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.progress-bar {
+  height: 20px;
+  background-color: #42a5f5;
+  border-radius: 10px;
+  transition: width 0.3s ease;
+}
+
+.progress-text {
+  margin-top: 10px;
+  font-size: 18px;
+  color: #5e6e76;
+}
+
+/* FOOTER FIXED AT BOTTOM */
+.footer {
+  background-color: #794a9d;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: auto;
+}
+
+.footer p {
+  margin: 0;
+}
+
+.footer a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}

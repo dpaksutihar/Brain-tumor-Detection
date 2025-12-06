@@ -1,0 +1,13 @@
+// MRI App Flow
+digraph {
+	A [label="Upload MRI" color=lightblue shape=box style=filled]
+	B [label="Backend:
+Classification & Segmentation" color=lightgreen shape=box style=filled]
+	C [label="Save Results & Metadata" color=orange shape=box style=filled]
+	D [label="Frontend Display" color=pink shape=box style=filled]
+	E [label="Patient Data Management" color=yellow shape=box style=filled]
+	A -> B
+	B -> C
+	C -> D
+	D -> E
+}
