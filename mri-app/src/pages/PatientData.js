@@ -9,7 +9,7 @@ const PatientData = () => {
 
   const fetchRecords = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/get-patient-data");
+      const response = await axios.get("http://localhost:5000/get-patient-records");
 
       if (response.status === 200) {
         const fixed = response.data.records.flat().map(rec => ({

@@ -1,32 +1,22 @@
 [
     {
-        "Patient Name": "sadsadsadsa",
-        "Tumor Type": "No Tumor",
-        "Confidence": "98.38%",
-        "Other Details": "jonj",
-        "Original Image": "data/images\\sadsadsadsa_20251205_145329.png",
-        "Segmented Image": "data/segmented\\sadsadsadsa_20251205_145329.png",
-        "Date": "2025-12-05",
-        "Time": "14:53:29"
-    },
-    {
-        "Patient Name": "sadsadsadsa",
-        "Tumor Type": "No Tumor",
-        "Confidence": "98.38%",
-        "Other Details": "csc",
-        "Original Image": "data/images\\sadsadsadsa_20251205_150102.png",
-        "Segmented Image": "data/segmented\\sadsadsadsa_20251205_150102.png",
-        "Date": "2025-12-05",
-        "Time": "15:01:02"
-    },
-    {
         "Patient Name": "Deepak",
-        "Tumor Type": "No Tumor",
-        "Confidence": "99.97%",
-        "Other Details": "Sharp pain in front",
-        "Original Image": "data/images\\Deepak_20251205_180439.png",
-        "Segmented Image": "data/segmented\\Deepak_20251205_180439.png",
-        "Date": "2025-12-05",
-        "Time": "18:04:39"
+        "Tumor Type": "Glioma",
+        "Confidence": "100%",
+        "Other Details": "Age 23\r\nHaving pain in front right",
+        "Original Image": "images/original\\Deepak_20251210_184224.png",
+        "Segmented Image": "images/segmented\\Deepak_20251210_184224.png",
+        "Date": "2025-12-10",
+        "Time": "18:42:24"
+    },
+    {
+        "Patient Name": "deepak",
+        "Tumor Type": "Glioma",
+        "Confidence": "99.98%",
+        "Other Details": "ssdad",
+        "Original Image": "data/images/Uploaded\\deepak_20251210_184833.png",
+        "Segmented Image": "data/images/Segmented\\deepak_20251210_184833.png",
+        "Date": "2025-12-10",
+        "Time": "18:48:33"
     }
 ]

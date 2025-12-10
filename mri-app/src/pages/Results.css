@@ -1,222 +1,461 @@
-/* Results Page Styles (results.css) */
-.results {
+/* --- Global Reset & Body Styles --- */
+body {
+    margin: 0;
     font-family: 'Arial', sans-serif;
-    background-color: #f1f8f9;
-    color: #2e3a45;
+    background-color: #f4f7f9;
+    color: #333;
+    line-height: 1.6;
+}
 
-    /* FIX: Make page stretch full height */
+/* --- Navigation Bar --- */
+.navbar {
+    background-color: #2c3e50;
+    color: white;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* NEW: Center the UL element horizontally within the navbar */
+    display: flex;
+    justify-content: center;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    /* This rule is correct and keeps the list items centered relative to each other */
+    justify-content: center; 
+}
+
+.navbar li {
+    margin: 0 15px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    padding: 5px 0;
+}
+
+.navbar a:hover {
+    color: #3498db;
+}
+
+/* --- Main Results Container --- */
+.results {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
 
-.navbar {
-    background-color: #794a9d;
-    padding: 10px;
-}
-
-.navbar ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-}
-
-.navbar ul li {
-    margin: 0 15px;
-}
-
-.navbar ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-}
-
-.navbar ul li a:hover {
-    text-decoration: underline;
-}
-
 .results-container {
-    padding: 40px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    margin: 30px;
-    text-align: center;
-
-    /* FIX: Allow it to push footer down */
-    flex: 1;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    flex-grow: 1;
 }
 
 .results-container h2 {
-    font-size: 32px;
+    text-align: center;
+    color: #2c3e50;
     margin-bottom: 30px;
-    color: #0d2c44;
+    border-bottom: 2px solid #ecf0f1;
+    padding-bottom: 10px;
 }
 
-.results-content {
+/* ---------------------------------------------------- */
+/* --- NEW MAIN REPORT GRID LAYOUT (40% / 60% Split) --- */
+/* ---------------------------------------------------- */
+.report-main-grid {
+    display: flex; 
+    gap: 30px; 
+    margin-bottom: 30px; 
+    align-items: flex-start;
+}
+
+.report-column-left {
+    flex: 0 0 40%; /* Fixed 40% width for images */
+    display: flex;
+    flex-direction: column; /* Stacks image cards vertically */
+    gap: 20px;
+}
+
+.report-column-right {
+    flex: 1; /* Takes up the remaining space (approx 60%) */
+    display: flex;
+    flex-direction: column; 
+    gap: 20px;
+    /* FIX: Ensure padding/borders don't cause overflow */
+    box-sizing: border-box; 
+    /* The width should already be handled by flex: 1, but adding max-width can help */
+    width: 100%;
+}
+/* --- OBSOLETE (Removed the old conflicting grid definitions) --- */
+/* .image-comparison-grid, .summary-grid-blocks { ... } */
+
+
+/* --- Image Card Styles --- */
+.image-card {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    width: 100%; /* Ensures it spans the full 40% column width */
+}
+
+.image-card h3 {
+    color: #34495e;
+    margin-top: 0;
+    font-size: 1.2em;
+}
+
+.image-preview-wrapper {
+    position: relative;
+    width: 100%;
+    height: 250px; /* Adjusted height for better vertical fit */
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 30px;
+    overflow: hidden;
+    border-radius: 6px;
+    cursor: zoom-in;
+    transition: box-shadow 0.3s ease;
 }
 
-.image-section, .segmented-image-section {
-    width: 40%;
-}
-
-.image-container {
-    margin-top: 10px;
+.image-preview-wrapper:hover {
+    box-shadow: 0 0 0 4px #3498db;
 }
 
 .preview-image {
-    max-width: 100%;
-    max-height: 400px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: auto; 
+    height: 100%;
+    object-fit: contain; 
+    border-radius: 6px;
 }
 
-.classification-details {
-    width: 100%;
-    margin-top: 30px;
-    text-align: center;
+.image-placeholder-text {
+    color: #95a5a6;
+    height: 250px; /* Match wrapper height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
 }
 
-.details-container {
-    display: inline-block;
-    background-color: #ffffff;
+/* --- Analysis Summary Section --- */
+.results-separator {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(44, 62, 80, 0.75), rgba(0, 0, 0, 0));
+    margin: 30px 0;
+}
+
+/* 2. Ensure the main Analysis Card behaves correctly */
+.classification-details-card {
+    border: 1px solid #e0e0e0;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    background-color: #fff;
+    width: 100%; /* Spans full 60% column width */
+    /* FIX: This is the most critical fix for padding/border overflow */
+    box-sizing: border-box; 
 }
 
-.buttons {
-    margin-top: 30px;
+.classification-details-card h3 {
+    color: #2c3e50;
+    margin-top: 0;
+    border-bottom: 1px dashed #ecf0f1;
+    padding-bottom: 10px;
 }
 
-.back-btn {
-    background-color: #42a5f5;
+/* New wrapper to stack analysis blocks inside the right column */
+.summary-blocks-stacked {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.summary-block {
+    background-color: #fefefe;
+    padding: 20px;
+    border-radius: 6px;
+    border: 1px solid #f0f0f0;
+}
+
+.summary-block h4 {
+    color: #34495e;
+    margin-top: 0;
+    font-size: 1.1em;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #eee;
+}
+
+.summary-item {
+    margin-bottom: 15px;
+}
+
+.summary-item .label {
+    font-weight: 500;
+    color: #7f8c8d;
+    margin-bottom: 5px;
+}
+
+.summary-item .value {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.tumor-type-result .status-high {
+    color: #c0392b; 
+}
+
+.tumor-type-result .status-low {
+    color: #27ae60; 
+}
+
+
+/* --- Progress Bar Styles --- */
+.progress-bar-container {
+    background-color: #ecf0f1;
+    border-radius: 4px;
+    height: 25px;
+    margin: 8px 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress-fill {
+    height: 100%;
+    transition: width 1.5s ease-out, background-color 0.5s ease;
+    border-radius: 4px;
+}
+
+.progress-bar-container.large-bar {
+    height: 35px;
+    margin-bottom: 15px;
+}
+
+.individual-scores-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.progress-bar-container.small-bar {
+    height: 15px;
+    margin: 5px 0 0 0;
+}
+
+.score-label {
+    font-weight: 500;
+    color: #7f8c8d;
+    margin-bottom: 5px;
+}
+
+.score-value {
+    font-weight: 500;
+}
+
+.small-separator {
+    border: 0;
+    height: 1px;
+    background-color: #e0e0e0;
+    margin: 15px 0;
+}
+
+.info-tag {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    font-weight: bold;
     color: white;
-    padding: 15px 30px;
-    font-size: 18px;
+    margin-top: 5px;
+    background-color: #95a5a6;
+}
+
+/* --- Buttons (Moved to the bottom of the right column) --- */
+/* --- Buttons (Moved to the bottom of the right column) --- */
+.buttons {
+    display: flex;
+    /* CHANGE: Center the buttons together */
+    justify-content: center; 
+    gap: 20px; /* Add space between the two centered buttons */
+    text-align: center;
+    margin-top: 0; 
+}
+
+.back-btn, .save-btn {
+    padding: 12px 25px;
+    font-size: 1.1em;
+    font-weight: bold;
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
     cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s;
+    /* margin: 0; is fine now, as 'gap' handles spacing */
+}
+
+/* ... rest of the button styles ... */
+.back-btn {
+    background-color: #3498db;
+    color: white;
 }
 
 .back-btn:hover {
-    background-color: #1e88e5;
+    background-color: #2980b9;
+    transform: translateY(-2px);
 }
 
 .save-btn {
-    background-color: #66bb6a;
+    background-color: #2ecc71;
     color: white;
-    padding: 15px 30px;
-    font-size: 18px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 20px;
 }
 
 .save-btn:hover {
-    background-color: #388e3c;
+    background-color: #27ae60;
+    transform: translateY(-2px);
 }
 
-/* Modal Styles */
-.modal {
+/* --- Modal Styling --- */
+.modal-overlay, .zoom-modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1000;
 }
+
 .modal-content {
-    background-color: white;
-    padding: 20px;
+    background: white;
+    padding: 30px;
     border-radius: 8px;
-    max-width: 500px;
-    width: 100%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 450px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-.modal-content form > div {
-    margin-bottom: 15px;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
+.modal-content h3 {
+    margin-top: 0;
+    color: #2c3e50;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .modal-content label {
-    margin-bottom: 10px;
+    display: block;
     font-weight: bold;
+    margin-bottom: 5px;
+    color: #34495e;
 }
 
-.modal-content input,
+.modal-content input[type="text"], 
 .modal-content textarea {
     width: 100%;
     padding: 10px;
+    margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    font-family: Arial, sans-serif;
-    font-size: 14px;
     box-sizing: border-box;
 }
 
 .modal-content textarea {
     resize: vertical;
-    min-height: 80px;
+    min-height: 100px;
 }
 
 .modal-buttons {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
+    gap: 10px;
     margin-top: 20px;
 }
 
-.cancel-btn, .save-btn {
-    padding: 10px 20px;
-    background-color: #007bff;
+.modal-buttons .cancel-btn {
+    background-color: #95a5a6;
+    color: white;
+}
+
+.modal-buttons .cancel-btn:hover {
+    background-color: #7f8c8d;
+}
+
+/* --- Zoom Modal Specific Styles --- */
+.zoom-modal-content {
+    background: transparent;
+    padding: 0;
+    max-width: 90vw;
+    max-height: 90vh;
+    border-radius: 0;
+    box-shadow: none;
+    position: relative;
+    cursor: default;
+}
+
+.zoomed-image {
+    max-width: 100%;
+    max-height: 80vh; 
+    display: block;
+    margin: auto;
+    border: 4px solid white;
+    border-radius: 8px;
+}
+
+.zoom-close-btn {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    background: #e74c3c;
     color: white;
     border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
     cursor: pointer;
-    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 10;
 }
 
-.cancel-btn {
-    background-color: #f44336;
+.zoom-close-btn:hover {
+    background: #c0392b;
 }
 
-.save-btn {
-    background-color: #4CAF50;
-}
-
-button:hover {
-    opacity: 0.9;
-}
-
-/* Footer – FIXED STRUCTURE */
-.footer {
-    background-color: #794a9d;
+.zoom-caption {
     color: white;
     text-align: center;
-    padding: 20px;
-    margin-top: auto;  /* Pushes footer to bottom */
+    margin-top: 10px;
+    font-size: 0.9em;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
 }
 
-.footer p {
-    margin: 0;
+
+/* --- Footer --- */
+.footer {
+    text-align: center;
+    padding: 15px 0;
+    background-color: #2c3e50;
+    color: #bdc3c7;
+    font-size: 0.9em;
+    margin-top: 30px;
 }
 
 .footer a {
-    color: white;
+    color: #bdc3c7;
     text-decoration: none;
 }
 
@@ -224,18 +463,3 @@ button:hover {
     text-decoration: underline;
 }
 
-/* Responsive Fixes */
-@media (max-width: 768px) {
-    .results-content {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .image-section, .segmented-image-section {
-        width: 80%;
-    }
-
-    .back-btn, .save-btn {
-        width: 100%;
-    }
-}
