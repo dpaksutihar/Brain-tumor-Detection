@@ -1,8 +1,3 @@
-REM ===============================
-REM Start Flask API and React app
-REM ===============================
-
-REM Start Flask backend
 echo Starting Flask backend...
 start cmd /k "cd /d mri-app && python PythonServer.py"
 

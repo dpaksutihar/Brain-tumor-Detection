@@ -19,10 +19,11 @@ echo -------------------------------------------
 
 REM --- Node packages ---
 echo Installing Node.js packages...
-npm install
 npm install cors
 npm install concurrently
 npm install axios
+cd mri-app
+npm install
 
 echo -------------------------------------------
 echo Node packages installed.
